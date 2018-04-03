@@ -12,4 +12,4 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
 ## Disclaimer
-Current workflow only implements the Canu assembly of raw reads and then the taxxanomic information. Later steps will introduce the read clustering by Mash.
+Current workflow only implements the Canu assembly of raw reads and then the taxonomic information. Later steps will introduce the read clustering by Mash.
