@@ -37,4 +37,13 @@ RUN tar -xvf canu-1.7.Linux-amd64.tar.xz
 RUN wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.7.1+-x64-linux.tar.gz
 RUN tar -zxvf ncbi-blast-2.7.1+-x64-linux.tar.gz
 
+# it needs perl-doc
+RUN apt-get install -qq perl-doc
+
+# Download some blast databases
+# RUN ncbi-blast-2.7.1+/bin/update_blastdb.pl nr nt
+
+# Install poretools
+RUN pip install poretools
+
 CMD ["/usr/local/bin/jupyter", "notebook", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
