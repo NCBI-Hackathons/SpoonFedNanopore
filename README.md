@@ -1,21 +1,7 @@
 # SpoonFedNanopore
-The world's simplest open-source nanopore alignment and assembly algorithm.
+The world's simplest open-source nanopore alignment and assembly algorithm. This is meant to be an educational tool that Just Works(TM), and walks a user through assembling a metagenome from raw nanopore reads. This pipeline also performs gene annotation and gives the user taxanomic information through BLAST.
 
-## Use cases
-de novo assembly
-reference guided assembly
-mapping
+## Uses
 
-## List of aligners
-minimap2
-minialign
-GraphMap
-
-## Comparison on varied position
-y centromere (https://www.nature.com/articles/nbt.4109)
-platinum genomes
-mhc region
-
-## Parts of the pipeline
-Give me unaligned reads
-Automatically show the pipeline used
+## Workflow
+![SpoonFedNanopore Workflow](./images/diagram.png)
