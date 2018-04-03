@@ -11,9 +11,16 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
-## Usage
+## Dependencies
+* jupyter
+* docker
 
-Add stuff here on how to actually use this (this could be "Click this link to open the Jupyter notebook and it should all just work" or maybe explanation of Docker stuff?)
+## Installation
+Use docker to get other tools and dependencies
+`docker run yadayda`
+
+Open the notebook with jupyter
+`jupyter notebook yadayada`
 
 ## Disclaimer
 Current workflow only implements the Canu assembly of raw reads and then the taxonomic information. Later steps will introduce the read clustering by Mash.
