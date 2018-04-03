@@ -43,6 +43,9 @@ RUN apt-get install -qq perl-doc
 # Download some blast databases
 # RUN ncbi-blast-2.7.1+/bin/update_blastdb.pl nr nt
 
+# Install more pythons
+RUN apt-get install -qq python-pip
+
 # Install poretools
 RUN pip install poretools
 
