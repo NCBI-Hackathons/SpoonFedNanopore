@@ -4,7 +4,7 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 ## Uses
 * Educational tool for teaching undergrads or high school students the basics of genome assembly
 * Simple tool for WIMP (What's In My Pot) analysis that doesn't require any external tools
-* Citizen scientist that wants to sequence their roommate's toothbrush
+* Citizen scientist that wants to sequence whatever's on their roommate's toothbrush
 
 ## Workflow
 ![SpoonFedNanopore Workflow](./images/diagram.png)
