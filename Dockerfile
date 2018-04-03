@@ -49,4 +49,10 @@ RUN apt-get install -qq python-pip
 # Install poretools
 RUN pip install poretools
 
+# Make viz
+RUN pip install matplotlib scikit-learn
+
+# Do BAM things
+RUN pip install pysam
+
 CMD ["/usr/local/bin/jupyter", "notebook", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
