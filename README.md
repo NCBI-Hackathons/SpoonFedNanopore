@@ -7,7 +7,7 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 * Citizen scientist that wants to sequence whatever's on their roommate's toothbrush
 
 ## Workflow
-![SpoonFedNanopore Workflow](./images/diagram.png)
+![DirtPore Workflow](./images/diagram.png)
 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
