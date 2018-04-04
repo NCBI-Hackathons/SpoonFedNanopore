@@ -49,4 +49,46 @@ RUN apt-get install -qq python-pip
 # Install poretools
 RUN pip install poretools
 
+# Make viz
+RUN pip install matplotlib scikit-learn
+
+# Do BAM things
+RUN pip install pysam
+
+# Get MetaGeneMark
+
+RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/MetaGeneMark_linux_64.tar.gz
+RUN tar -zvxf MetaGeneMark_linux_64.tar.gz
+RUN cp MetaGeneMark_linux_64/mgm/gmhmmp /usr/bin/.
+
+
+WORKDIR /home/root
+RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/gm_key_64.gz
+RUN gunzip gm_key_64.gz
+RUN mv gm_key_64 .gm_key
+
+# Get mash
+RUN wget https://github.com/marbl/Mash/releases/download/v2.0/mash-Linux64-v2.0.tar
+RUN tar -xvf mash-Linux64-v2.0.tar
+RUN cp mash-Linux64-v2.0/mash /usr/bin/.
+
+# Get git
+RUN apt-get install -qq git
+
+# Get miniasm
+RUN git clone https://github.com/lh3/miniasm.git
+WORKDIR /home/root/miniasm
+RUN make
+RUN cp miniasm /usr/bin/.
+RUN cp minidot /usr/bin/.
+
+# Get minimap2
+RUN wget https://github.com/lh3/minimap2/releases/download/v2.10/minimap2-2.10_x64-linux.tar.bz2
+RUN bunzip2 minimap2-2.10_x64-linux.tar.bz2
+RUN tar -xvf minimap2-2.10_x64-linux.tar
+RUN cp minimap2-2.10_x64-linux/minimap2 /usr/bin/.
+
+
+WORKDIR /work
+
 CMD ["/usr/local/bin/jupyter", "notebook", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
