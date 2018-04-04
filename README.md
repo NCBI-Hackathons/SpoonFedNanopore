@@ -16,13 +16,15 @@ Reads are first classified based on genomic distance using 4mers using Mash. The
 * `git`
 
 ## Installation
-Install the Docker Community Edition at https://www.docker.com/community-edition for your distribution.
+Install the Docker Community Edition [here](https://www.docker.com/community-edition) for your distribution.
 
-### Linux
+### Mac and Linux
 ```
 $ git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
 $ cd SpoonFedNanopore/
 $ docker build .
+# At the end of this step, you will get an ID to input in the next command
+$ docker run -it -p 8888:8888 -v $PWD:/work YOURHASH
 ```
 TODO instruction for building from docker store
 
