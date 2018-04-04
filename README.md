@@ -23,7 +23,8 @@ Install the Docker Community Edition [here](https://www.docker.com/community-edi
 $ git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
 $ cd SpoonFedNanopore/
 $ docker build .
-# At the end of this step, you will get an ID to input in the next command
+$ docker images
+# Use the hash given by this command in the next command
 $ docker run -it -p 8888:8888 -v $PWD:/work YOURHASH
 ```
 TODO instruction for building from docker store
