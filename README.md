@@ -24,7 +24,7 @@ $ git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
 $ cd SpoonFedNanopore/
 $ docker build .
 $ docker images
-# Use the hash given by this command in the next command
+# Use the hash given by this command, and replace YOURHASH with the Image ID given
 $ docker run -it -p 8888:8888 -v $PWD:/work YOURHASH
 ```
 TODO instruction for building from docker store
