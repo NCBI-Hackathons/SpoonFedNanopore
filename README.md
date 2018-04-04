@@ -32,3 +32,10 @@ TODO instruction for building from docker store
 
 ## Disclaimer
 Current workflow only implements the Canu assembly of raw reads and then the taxonomic information. Later steps will introduce the read clustering by Mash.
+
+## References
+
+Li, H. (2016). Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences. Bioinformatics 32(14), 2103–2110.
+Li, H. (2017). Minimap2: pairwise alignment for nucleotide sequences. arXiv.
+Loman, N. J. and Quinlan, A. R. (2014). Poretools: a toolkit for analyzing nanopore sequence data. Bioinformatics 30(23), 3399–3401.
+Loman, N. J., Quick, J. and Simpson, J. T. (2015). A complete bacterial genome assembled de novo using only nanopore sequencing data. Nature Methods 12(8), 733–735.
