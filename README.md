@@ -11,12 +11,21 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
+## Requirements
+Pipeline must be run on a computer with atleast 4 GB of RAM
+
 ## Dependencies
 * `docker`
 * `git`
 
 ## Installation
 Install the Docker Community Edition [here](https://www.docker.com/community-edition) for your distribution.
+
+### Mac specific
+Run docker application
+Preferences -> Advanced
+Set Memory slider to the highest settings
+Apply changes
 
 ### Mac and Linux
 ```
