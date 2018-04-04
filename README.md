@@ -7,7 +7,7 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 * Citizen scientist that wants to sequence whatever's on their roommate's toothbrush
 
 ## Workflow
-![SpoonFedNanopore Workflow](./images/diagram.png)
+![DirtPore Workflow](./images/diagram.png)
 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
@@ -16,16 +16,28 @@ Reads are first classified based on genomic distance using 4mers using Mash. The
 * `git`
 
 ## Installation
-Install the Docker Community Edition from ![here](https://www.docker.com/community-edition) for your distribution.
+Install the Docker Community Edition [here](https://www.docker.com/community-edition) for your distribution.
 
-### Linux
+### Mac and Linux
 ```
 $ git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
 $ cd SpoonFedNanopore/
 $ docker build .
+$ docker images
+# Use the hash given by this command, and replace YOURHASH with the Image ID given
+$ docker run -it -p 8888:8888 -v $PWD:/work YOURHASH
 ```
 TODO instruction for building from docker store
 
 
 ## Disclaimer
 Current workflow only implements the Canu assembly of raw reads and then the taxonomic information. Later steps will introduce the read clustering by Mash.
+
+## References
+
+1. Li, H. (2016). Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences. Bioinformatics 32(14), 2103–2110.
+
+2. Li, H. (2017). Minimap2: pairwise alignment for nucleotide sequences. arXiv.
+
+3. Loman, N. J. and Quinlan, A. R. (2014). Poretools: a toolkit for analyzing nanopore sequence data. Bioinformatics 30(23), 3399–3401.
+4. Loman, N. J., Quick, J. and Simpson, J. T. (2015). A complete bacterial genome assembled de novo using only nanopore sequencing data. Nature Methods 12(8), 733–735.
