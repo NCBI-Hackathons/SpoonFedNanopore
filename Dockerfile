@@ -59,11 +59,28 @@ RUN pip install pysam
 
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/MetaGeneMark_linux_64.tar.gz
 RUN tar -zvxf MetaGeneMark_linux_64.tar.gz
+RUN cp MetaGeneMark_linux_64/mgm/gmhmmp /usr/bin/.
+
 
 WORKDIR /home/root
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/gm_key_64.gz
 RUN gunzip gm_key_64.gz
 RUN mv gm_key_64 .gm_key
+
+# Get mash
+RUN wget https://github.com/marbl/Mash/releases/download/v2.0/mash-Linux64-v2.0.tar
+RUN tar -xvf mash-Linux64-v2.0.tar
+RUN cp mash-Linux64-v2.0/mash /usr/bin/.
+
+# Get git
+RUN apt-get install -qq git
+
+# Get minimap
+RUN git clone https://github.com/lh3/miniasm.git
+WORKDIR /home/root/miniasm
+RUN make
+RUN cp miniasm /usr/bin/.
+RUN cp minidot /usr/bin/.
 
 WORKDIR /work
 
