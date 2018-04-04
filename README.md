@@ -12,15 +12,20 @@ The world's simplest open-source nanopore alignment and assembly pipeline. This 
 Reads are first classified based on genomic distance using 4mers using Mash. The reads are classified into bins which are then assembled into genomes using canu. The resulting assemblies are then blasted using TAXBLAST to see the taxanomic information from the sample. The pipeline also does simple gene annotation using MetaGeneMark.
 
 ## Dependencies
-* jupyter
-* docker
+* `docker`
+* `git`
 
 ## Installation
-Use docker to get other tools and dependencies
-`docker run yadayda`
+Install the Docker Community Edition from ![here](https://www.docker.com/community-edition) for your distribution.
 
-Open the notebook with jupyter
-`jupyter notebook yadayada`
+### Linux
+```
+$ git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
+$ cd SpoonFedNanopore/
+$ docker build .
+```
+TODO instruction for building from docker store
+
 
 ## Disclaimer
 Current workflow only implements the Canu assembly of raw reads and then the taxonomic information. Later steps will introduce the read clustering by Mash.

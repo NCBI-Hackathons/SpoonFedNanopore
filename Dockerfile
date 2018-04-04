@@ -62,10 +62,12 @@ RUN tar -zvxf MetaGeneMark_linux_64.tar.gz
 RUN cp MetaGeneMark_linux_64/mgm/gmhmmp /usr/bin/.
 
 
-WORKDIR /home/root
+WORKDIR /root
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/gm_key_64.gz
 RUN gunzip gm_key_64.gz
 RUN mv gm_key_64 .gm_key
+
+WORKDIR /work
 
 # Get mash
 RUN wget https://github.com/marbl/Mash/releases/download/v2.0/mash-Linux64-v2.0.tar
@@ -77,7 +79,7 @@ RUN apt-get install -qq git
 
 # Get miniasm
 RUN git clone https://github.com/lh3/miniasm.git
-WORKDIR /home/root/miniasm
+WORKDIR /work/miniasm
 RUN make
 RUN cp miniasm /usr/bin/.
 RUN cp minidot /usr/bin/.
