@@ -84,11 +84,14 @@ RUN make
 RUN cp miniasm /usr/bin/.
 RUN cp minidot /usr/bin/.
 
+WORKDIR /work
+
 # Get minimap2
-RUN wget https://github.com/lh3/minimap2/releases/download/v2.10/minimap2-2.10_x64-linux.tar.bz2
-RUN bunzip2 minimap2-2.10_x64-linux.tar.bz2
-RUN tar -xvf minimap2-2.10_x64-linux.tar
-RUN cp minimap2-2.10_x64-linux/minimap2 /usr/bin/.
+RUN git clone https://github.com/lh3/minimap2.git
+
+WORKDIR /work/minimap2
+RUN make
+RUN cp minimap2 /usr/bin/.
 
 # Get BioPython
 RUN pip3 install biopython
