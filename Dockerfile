@@ -55,4 +55,16 @@ RUN pip install matplotlib scikit-learn
 # Do BAM things
 RUN pip install pysam
 
+# Get MetaGeneMark
+
+RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/MetaGeneMark_linux_64.tar.gz
+RUN tar -zvxf MetaGeneMark_linux_64.tar.gz
+
+WORKDIR /home/root
+RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_H80a6/gm_key_64.gz
+RUN gunzip gm_key_64.gz
+RUN mv gm_key_64 .gm_key
+
+WORKDIR /work
+
 CMD ["/usr/local/bin/jupyter", "notebook", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
