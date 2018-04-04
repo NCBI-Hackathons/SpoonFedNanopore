@@ -16,7 +16,7 @@ Reads are first classified based on genomic distance using 4mers using Mash. The
 * `git`
 
 ## Installation
-Install the Docker Community Edition from ![here](https://www.docker.com/community-edition) for your distribution.
+Install the Docker Community Edition at https://www.docker.com/community-edition for your distribution.
 
 ### Linux
 ```
