@@ -90,7 +90,14 @@ RUN bunzip2 minimap2-2.10_x64-linux.tar.bz2
 RUN tar -xvf minimap2-2.10_x64-linux.tar
 RUN cp minimap2-2.10_x64-linux/minimap2 /usr/bin/.
 
+# Get BioPython
+RUN pip3 install biopython
+
 
 WORKDIR /work
+
+RUN git clone https://github.com/NCBI-Hackathons/SpoonFedNanopore.git
+RUN cp -R SpoonFedNanopore/* .
+
 
 CMD ["/usr/local/bin/jupyter", "notebook", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
