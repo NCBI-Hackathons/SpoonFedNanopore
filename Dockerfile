@@ -75,12 +75,19 @@ RUN cp mash-Linux64-v2.0/mash /usr/bin/.
 # Get git
 RUN apt-get install -qq git
 
-# Get minimap
+# Get miniasm
 RUN git clone https://github.com/lh3/miniasm.git
 WORKDIR /home/root/miniasm
 RUN make
 RUN cp miniasm /usr/bin/.
 RUN cp minidot /usr/bin/.
+
+# Get minimap2
+RUN wget https://github.com/lh3/minimap2/releases/download/v2.10/minimap2-2.10_x64-linux.tar.bz2
+RUN bunzip2 minimap2-2.10_x64-linux.tar.bz2
+RUN tar -xvf minimap2-2.10_x64-linux.tar
+RUN cp minimap2-2.10_x64-linux/minimap2 /usr/bin/.
+
 
 WORKDIR /work
 
